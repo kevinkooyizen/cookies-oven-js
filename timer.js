@@ -1,8 +1,8 @@
+// Some references on building a countdown timer:
 //https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/
 //http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
 
-// tell them its not be a good practice to declare variable
-// on a global scope like this but in this case for the sake of simplicity
+// Note that it's not a good practice to declare variables on a global scope like this but in this case, it's for the sake of simplicity
 var timer;
 var currentTime = -1;
 var timeDone = 15;
