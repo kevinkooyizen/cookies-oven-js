@@ -100,13 +100,30 @@ function startTimer() {
 }
 
 function endTimer() {
-  clearInterval(timer);
-  timerRunning = false;
+  if (timerRunning) {
+    clearInterval(timer);
+    timerRunning = false;
+    p = document.getElementById("deliver-cookies");
+    if (currentTime > timeDone) {
+      p.innerHTML = "Oh no, the cookies are burnt! Try again!"
+    }
+    else {
+      p.innerHTML = "Here you go!"
+    };
+    document.getElementById("stop-btn").disabled = true;
+    restartTimer();
+  }
+  else {
+    p = document.getElementById("deliver-cookies");
+    p.innerHTML = "You have not started the timer yet!";
+  };
 }
 
 // move to oven/script.js
 function initTimerFunc() {
-    startBtn = document.getElementById('start-btn');
-    startBtn.addEventListener("click", startTimer);
+  startBtn = document.getElementById('start-btn');
+  startBtn.addEventListener("click", startTimer);
+  stopBtn = document.getElementById('stop-btn');
+  stopBtn.addEventListener("click", endTimer);
 }
 document.addEventListener('DOMContentLoaded', initTimerFunc);

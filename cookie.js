@@ -47,7 +47,7 @@ function addCookie(){
 
   // check how many cookies added
   if (cookieCount >= cookieLimit) {
-   	p.innerHTML = 'Oops, your tray can\'t take anymore cookie doughs. Clear the tray or start the oven! :)';
+    p.innerHTML = 'Oops, your tray can\'t take anymore cookie doughs. Clear the tray or start the oven! :)';
     clearBtn = document.getElementById('clear');
     // if restart button not found, show result button (needed to avoid duplicate when spammed)
   }
